@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrdenadorRequest;
 use App\Http\Requests\UpdateOrdenadorRequest;
+use App\Models\Aula;
 use App\Models\Ordenador;
 
 class OrdenadorController extends Controller
@@ -21,7 +22,9 @@ class OrdenadorController extends Controller
      */
     public function create()
     {
-        //
+        return view('ordenadores.create', [
+            'aulas' => Aula::all(),
+        ]);
     }
 
     /**
@@ -37,7 +40,7 @@ class OrdenadorController extends Controller
      */
     public function show(Ordenador $ordenador)
     {
-        //
+        dd($ordenador);
     }
 
     /**
