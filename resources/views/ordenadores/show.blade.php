@@ -28,41 +28,7 @@
                         value="{{ $ordenador->aula->nombre }}" readonly>
                 </div>
                 <div class="sm:col-span-2">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Histórico de cambios
-                    </label>
-                    <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Aula origen
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Aula destino
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Instante
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($ordenador->cambios as $cambio)
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <td class="px-6 py-4">
-                                            {{ $cambio->origen->nombre }}
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            {{ $cambio->destino->nombre }}
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            {{ $cambio->created_at }}
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                    <livewire:cambios :$ordenador />
                 </div>
             </div>
         </div>
