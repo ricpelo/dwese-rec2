@@ -40,7 +40,9 @@ class OrdenadorController extends Controller
      */
     public function show(Ordenador $ordenador)
     {
-        dd($ordenador);
+        return view('ordenadores.show', [
+            'ordenador' => $ordenador,
+        ]);
     }
 
     /**
